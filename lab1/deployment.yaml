@@ -61,21 +61,24 @@ spec:
         - containerPort:  80
           name:  nginx
         volumeMounts:
-        - name: localtime
-          mountPath: /etc/localtime
-        - name: nginx_config
-          mountPath: /etc/nginx/conf.d/default.conf
-        - name: nginx_site
+        # - name: localtime
+        #   mountPath: /etc/localtime
+        # - name: nginx-config
+        #   mountPath: /etc/nginx/conf.d/default.conf
+        - name: nginx-site
           mountPath: /usr/share/nginx/html
-          readonly: true
+          readOnly: true
+        securityContext:
+          fsGroup: 0
       volumes:
-        - name: localtime
-          hostPath:
-            path: /usr/share/zoneinfo/Asia/Shanghai
-        - name: nginx_config
-          hostPath:
-            path: /home/ange/sgt-k8s-2023/docker.nginx/default.conf
-        - name: nginx_site
+        # - name: localtime
+        #   hostPath:
+        #     path: /usr/share/zoneinfo/Europe/Riga
+        # - name: nginx-config
+        #   hostPath:
+        #     path: /home/ange/sgt-k8s-2023/docker.nginx/default.conf
+        #     type: File
+        - name: nginx-site
           hostPath:
             path: /home/ange/sgt-k8s-2023/docker.nginx/html
       restartPolicy: Always

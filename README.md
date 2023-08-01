@@ -95,3 +95,16 @@ Steps
 ```kubectl create -f lab1/configmap.yaml```
 - Create deployment nginx
 ```kubectl apply -f lab1/deployment.yaml```
+- Scale out deployment to 2 replicas
+```kubectl scale deployment nginx --namespace nginx-lab --replicas 2
+```
+- Create service nginx
+```kubectl apply -f lab1/service.yaml```
+- Use Port-forward to access service/pod inside Kubernetes cluster
+```kubectl port-forward svc/nginx --namespace nginx-lab 8080:80```
+Access nginx service on http://localhost:8080/
+- Change svc label selector to 'app: nginx1' and apply change
+```kubectl apply -f lab1/service.yaml```
+Try to access nginx service on http://localhost:8080/. Is nginx available?
+- Change svc label selector back to 'app: nginx' and apply change
+```kubectl apply -f lab1/service.yaml```

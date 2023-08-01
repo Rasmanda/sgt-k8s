@@ -54,6 +54,29 @@ kubectl get all -n kube-system
 ```
 - DaemonSets
 - Deployments
+  Something stateless or without the state, e.g., web services
 - ReplicaSets
+  How many pods of deployment to run in parallel
 - Pods
+  Smallest resource in k8s where can be one or more (Docker) containers
 - Statefulsets
+  Something with the state, e.g., databases, disk storages
+
+### Configmaps
+```
+kubectl get configmap
+```
+Used to store configuration for pods or other resources
+
+### Secrets
+```
+kubect get secrets
+```
+Encrypted data. Used for passwords, TLS certificates. Data is encrypted, of course, but not secure by default.
+
+### Storage
+```
+kubectl get pv
+kubectl get pvc --namespace SOMENAMESPACE
+```
+Persistent Volume (PV) is a disk, HDD, SDD, logical disk, etc., which is attached to pods with Persistent Volume Claims (PVC). PV is cluster-wide, means is not tight to some namespace. While PVC is within some namespace, usually, where is the pod PV needs to be attached to.

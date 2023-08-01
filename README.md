@@ -107,3 +107,15 @@ Access nginx service on http://localhost:8080/
 Try to access nginx service on http://localhost:8080/. Is nginx available?
 - Change svc label selector back to 'app: nginx' and apply change
 ```kubectl apply -f lab1/service.yaml```
+
+
+## Homework
+### Update deployment with 
+- Mount nginx site data as volume (commented blocks in [Deployment template](lab1/deployment.yaml)).
+- Add mysql container to the same deployment
+- Define DB address, user and password in  [ConfigMap](lab1/configmap.yaml)
+- Add DB connection details to nginx as per example already there.
+
+### Look for help
+- Resources on Internet
+- Write me (email or MS Teams)

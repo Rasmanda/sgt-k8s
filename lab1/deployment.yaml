@@ -25,7 +25,19 @@ spec:
           # - Init containers always run to completion.
           # - Each init container must complete successfully before the next one starts.
       containers:
-      - name:  nginx
+      - name: mysql
+        image: mysql:latest
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+          limits:
+            cpu: 100m
+            memory: 100Mi   
+        ports:
+        - containerPort:  3306
+          name:  mysql
+      - name: nginx
         image:  nginx:latest
         resources:
           requests:

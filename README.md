@@ -49,7 +49,9 @@ Start minikube with ```minikube start```
 ### Quick look at Kuberenets cluster resources
 Node minikube and services
 ![K8s node with required services](images/k8s-node.png)
-Command: ```
+
+Command: 
+```
 kubectl get all -n kube-system
 ```
 - DaemonSets
@@ -80,3 +82,16 @@ kubectl get pv
 kubectl get pvc --namespace SOMENAMESPACE
 ```
 Persistent Volume (PV) is a disk, HDD, SDD, logical disk, etc., which is attached to pods with Persistent Volume Claims (PVC). PV is cluster-wide, means is not tight to some namespace. While PVC is within some namespace, usually, where is the pod PV needs to be attached to.
+
+## LAB work
+Create nginx deployment:
+- nginx itself
+- service to load balance requests
+
+Steps
+- Create namespace nginx-lab
+```kubectl create ns nginx-lab```
+- Create configmap nginx 
+```kubectl create -f lab1/configmap.yaml```
+- Create deployment nginx
+```kubectl apply -f lab1/deployment.yaml```

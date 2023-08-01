@@ -16,7 +16,9 @@ sudo apt update
 sudo apt install code
 ```
 Install extensions: Docker, Kubernetes, Kuberentes Templates
-![Alt text](images/vscode-plugins.png)
+![Plugins for lab in vscode editor](images/vscode-plugins.png)
+
+
 
 ## Kuberentes tools
 Source: [https://kubernetes.io/docs/tasks/tools/]
@@ -44,3 +46,14 @@ sudo install minikube-linux-amd64 /usr/local/bin/minikube
 
 Start minikube with ```minikube start```
 
+### Quick look at Kuberenets cluster resources
+Node minikube and services
+![K8s node with required services](images/k8s-node.png)
+Command: ```
+kubectl get all -n kube-system
+```
+- DaemonSets
+- Deployments
+- ReplicaSets
+- Pods
+- Statefulsets

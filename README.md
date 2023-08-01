@@ -3,6 +3,21 @@ She Goes Tech bootcamp 2023
 
 Kubernetes intro and labs.
 
+## Prereqs
+Install Vscode [https://code.visualstudio.com/docs/setup/linux]
+```
+sudo apt-get install wget gpg
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg
+sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
+rm -f packages.microsoft.gpg
+sudo apt install apt-transport-https
+sudo apt update
+sudo apt install code
+```
+Install extensions: Docker, Kubernetes, Kuberentes Templates
+![Alt text](images/vscode-plugins.png)
+
 ## Kuberentes tools
 Source: [https://kubernetes.io/docs/tasks/tools/]
 
@@ -23,3 +38,9 @@ sudo ./get_helm.sh
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 sudo install minikube-linux-amd64 /usr/local/bin/minikube
 ```
+
+## Local kubernetes cluster 
+[https://minikube.sigs.k8s.io/docs/start/]
+
+Start minikube with ```minikube start```
+

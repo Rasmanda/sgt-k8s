@@ -96,8 +96,7 @@ Steps
 - Create deployment nginx
 ```kubectl apply -f lab1/deployment.yaml```
 - Scale out deployment to 2 replicas
-```kubectl scale deployment nginx --namespace nginx-lab --replicas 2
-```
+```kubectl scale deployment nginx --namespace nginx-lab --replicas 2```
 - Create service nginx
 ```kubectl apply -f lab1/service.yaml```
 - Use Port-forward to access service/pod inside Kubernetes cluster
